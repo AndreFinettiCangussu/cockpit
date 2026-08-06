@@ -1,74 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cockpit — Privacy Policy</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-               max-width: 720px; margin: 40px auto; padding: 0 20px;
-               color: #1d1d1f; line-height: 1.7; }
-        h1   { font-size: 2rem; font-weight: 700; }
-        h2   { font-size: 1.1rem; font-weight: 600; margin-top: 2rem; }
-        p, li { font-size: 0.97rem; color: #3a3a3c; }
-        ul   { padding-left: 1.4rem; }
-        a    { color: #0071e3; }
-        footer { margin-top: 3rem; font-size: 0.85rem; color: #888; border-top: 1px solid #e0e0e0; padding-top: 1rem; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cockpit — Support</title>
+  <meta name="description" content="Support for Cockpit on visionOS. Help, FAQ, troubleshooting, and contact.">
+  <meta property="og:title" content="Cockpit — Support">
+  <meta property="og:description" content="Help, FAQ, and troubleshooting for Cockpit on visionOS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://andrefinetticangussu.github.io/cockpit/legal/support.html">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #121821;
+      --fg: #e9eef4;
+      --muted: #a6b0bc;
+      --border: #1f2833;
+      --accent: #4da3ff;
+      --accent-2: #7cc1ff;
+      --ok: #2ecc71;
+      --warn: #f39c12;
+      --bad: #e74c3c;
+      --shadow: rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, system-ui, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #0a0e13 0%, #0b0f14 60%, #0a0d12 100%);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header { padding: 28px 20px 10px; }
+    .title {
+      max-width: 980px; margin: 0 auto; padding: 0 8px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .title h1 { font-size: 28px; margin: 0; letter-spacing: 0.2px; }
+    .title p { margin: 6px 0 0; color: var(--muted); }
+
+    nav.top {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(10,14,19,0.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { max-width: 980px; margin: 0 auto; padding: 8px 12px; display: flex; gap: 14px; flex-wrap: wrap; }
+    .nav-inner a { color: var(--muted); font-size: 14px; padding: 6px 8px; border-radius: 8px; }
+    .nav-inner a:hover { color: var(--fg); background: rgba(255,255,255,0.06); text-decoration: none; }
+
+    main { max-width: 980px; margin: 0 auto; padding: 24px 20px 60px; }
+    section { margin: 22px 0; }
+    h2 { font-size: 22px; margin: 18px 0 10px; letter-spacing: 0.2px; }
+    h3 { font-size: 18px; margin: 16px 0 8px; }
+    p { margin: 10px 0; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 16px;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 820px) { .grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+
+    ul { padding-left: 18px; }
+
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--border); color: var(--muted); }
+    .btn {
+      display: inline-block; background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      color: #081018; font-weight: 600; padding: 10px 14px; border-radius: 10px; box-shadow: 0 8px 18px rgba(77,163,255,0.25);
+    }
+    .btn:hover { text-decoration: none; filter: brightness(1.05); }
+
+    details { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+    details + details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 600; }
+    summary::-webkit-details-marker { display: none; }
+
+    footer { border-top: 1px solid var(--border); color: var(--muted); padding: 24px 20px; }
+    .foot-inner { max-width: 980px; margin: 0 auto; font-size: 14px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="title">
+      <div>
+        <h1>Cockpit — Support</h1>
+        <p>Help, FAQ, troubleshooting, and contact for Cockpit on Apple Vision Pro.</p>
+      </div>
+    </div>
+  </header>
 
-<h1>Privacy Policy</h1>
-<p><strong>App:</strong> Cockpit for Apple Vision Pro<br>
-   <strong>Last updated:</strong> August 2026</p>
+  <nav class="top">
+    <div class="nav-inner">
+      <a href="#overview">Overview</a>
+      <a href="#getting-started">Getting Started</a>
+      <a href="#panels">Panels</a>
+      <a href="#customization">Customization</a>
+      <a href="#permissions">Permissions</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-<h2>1. Introduction</h2>
-<p>This Privacy Policy explains how Cockpit ("the App", "we", "us") handles information when you use our Apple Vision Pro application. We are committed to protecting your privacy. Cockpit is designed with a privacy-first approach: we do not collect, store, or transmit your personal data to any server we operate, and we do not use analytics, advertising, or tracking technologies.</p>
+  <main>
+    <section id="overview" class="card">
+      <h2>Overview</h2>
+      <p>Cockpit is a modular, glanceable dock for visionOS. Pin it in your space and keep essentials within reach, so you can check key info without constant app‑switching.</p>
+      <p>
+        <a class="btn" href="mailto:apps.supporthub@gmail.com?subject=Cockpit%20Support">Contact Support</a>
+        &nbsp;&nbsp;<span class="badge">Typical response: within 48 hours</span>
+      </p>
+      <p>
+        Also see: <a href="https://andrefinetticangussu.github.io/cockpit/legal/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> •
+        <a href="https://andrefinetticangussu.github.io/cockpit/legal/terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> •
+        <a href="https://apps.apple.com/app/id6798315258" target="_blank" rel="noopener">View on the App Store</a> •
+        <a href="https://apps.apple.com/app/id6798315258?action=write-review" target="_blank" rel="noopener">Rate Cockpit</a>
+      </p>
+    </section>
 
-<h2>2. Information We Do Not Collect</h2>
-<p>We do not collect your name, email address, IP address, device identifiers, usage statistics, crash reports (beyond what Apple provides to developers via Xcode Organizer with your consent), or any other personal information.</p>
+    <section id="getting-started">
+      <h2>Getting Started</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Place &amp; resize the dock</h3>
+          <ul>
+            <li>Open Cockpit. A compact dock window appears; place it where you want.</li>
+            <li>Resize from the bottom edge; height stays proportional for clarity.</li>
+            <li>The dock reappears across sessions where you left it.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Add and arrange panels</h3>
+          <ul>
+            <li>Tap the edit button below the dock.</li>
+            <li>Tap <strong>＋ Add</strong> to insert panels you haven’t placed yet.</li>
+            <li>Drag panels to reorder; tap the small × to remove one.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid cols-2" style="margin-top:14px;">
+        <div class="card">
+          <h3>Appearance &amp; theme</h3>
+          <ul>
+            <li>Tap the palette button in edit mode to choose a theme.</li>
+            <li>The Cockpit instrument theme offers a precise, flight‑deck look.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Useful settings</h3>
+          <ul>
+            <li>Time format: System / 12‑hour / 24‑hour</li>
+            <li>First day of the week</li>
+            <li>Temperature and wind units</li>
+            <li>Weather refresh interval</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<h2>3. On-Device Permissions</h2>
-<p>To provide its features, the App may request access to the following on-device data. All processing occurs locally; this data is never transmitted to us:</p>
-<ul>
-    <li><strong>Location (When In Use)</strong> — Used exclusively to fetch local weather conditions via Apple WeatherKit. WeatherKit sends your approximate location to Apple; this is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
-    <li><strong>Apple Music</strong> — Used to display the currently playing track and provide playback controls. No listening history is accessed or stored by the App.</li>
-    <li><strong>HomeKit</strong> — Used to display your home scenes and accessories and to execute actions you initiate. No home data is stored outside of HomeKit's own encrypted database.</li>
-    <li><strong>Calendar (Full Access)</strong> — Used to display your upcoming events on the dashboard. Event data is read-only and is never transmitted outside your device.</li>
-    <li><strong>Health (Read Only)</strong> — Used to display your daily Move, Exercise, and Stand rings from Apple Watch. No health data is stored by the App or transmitted to us. All access is read-only through Apple's HealthKit framework.</li>
-</ul>
-<p>You can grant or revoke any of these permissions at any time in your device's Settings app.</p>
+    <section id="panels">
+      <h2>Panels</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Clock</h3>
+          <p>Large, glanceable time with weekday and date. The Cockpit instrument theme adds an analog dial and a UTC offset readout.</p>
+        </div>
+        <div class="card">
+          <h3>Weather</h3>
+          <p>Current conditions and a compact forecast powered by Apple WeatherKit. Choose °C/°F and wind units; set a refresh interval.</p>
+        </div>
+        <div class="card">
+          <h3>Calendar</h3>
+          <p>Your week and upcoming events at a glance (read‑only, with your permission).</p>
+        </div>
+        <div class="card">
+          <h3>Focus Timer</h3>
+          <p>Quick focus sessions with presets (5/15/30/60 min), a clean progress ring, pause/resume/stop, and a clear completion state.</p>
+        </div>
+        <div class="card">
+          <h3>Now Playing</h3>
+          <p>Apple Music now playing appears only while audio is active on this device—so you always see what’s on.</p>
+        </div>
+        <div class="card">
+          <h3>Vision Pro Status</h3>
+          <p>CPU, memory, storage, battery level/state, thermal state (Normal/Fair/Serious/Critical), Low Power, and uptime—organized as rings and concise rows.</p>
+        </div>
+        <div class="card">
+          <h3>Shortcuts</h3>
+          <p>One‑tap buttons that run your Shortcuts by exact name. You can add an SF Symbol icon. Running a Shortcut may briefly open the Shortcuts app; some actions aren’t available on visionOS.</p>
+        </div>
+        <div class="card">
+          <h3>Home</h3>
+          <p>Launch HomeKit scenes and toggle accessories directly from the dock. Create/edit scenes in Apple’s Home app. Up to six accessories are listed for quick toggles.</p>
+        </div>
+        <div class="card">
+          <h3>Network</h3>
+          <p>Connection type (Wi‑Fi/Ethernet/Cellular/Offline), local IPv4, ping latency (measured to one.one.one.one), and real‑time download/upload throughput sampled every second.</p>
+        </div>
+        <div class="card">
+          <h3>Activity</h3>
+          <p>Apple Watch‑style Move, Exercise, and Stand rings plus your daily step count (read‑only via HealthKit). Updates every 5 minutes.</p>
+        </div>
+      </div>
+    </section>
 
-<h2>4. Network Requests</h2>
-<p>The App makes a lightweight connectivity check (HTTP HEAD request) to Cloudflare's public resolver (<code>one.one.one.one</code>) solely to measure network latency for the Network dashboard panel. No personal data is included in this request. Weather data is fetched by Apple's WeatherKit SDK directly from Apple's servers.</p>
+    <section id="customization">
+      <h2>Customization</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Layout:</strong> Add/remove panels and drag to reorder in edit mode.</li>
+          <li><strong>Theme:</strong> Midnight, Graphite, Sunset, Ocean, and the Cockpit instrument theme.</li>
+          <li><strong>Resize &amp; scale:</strong> Drag the window edge; the dock keeps its aspect ratio so content stays legible.</li>
+          <li><strong>Persistence:</strong> Cockpit remembers your layout and reappears across sessions.</li>
+        </ul>
+      </div>
+    </section>
 
-<h2>5. Data Storage</h2>
-<p>Your dashboard layout, theme selection, and preferences are stored locally on your device using Apple's standard UserDefaults mechanism. This data is included in your iCloud backup if you have iCloud backup enabled; it is never sent to us.</p>
+    <section id="permissions">
+      <h2>Permissions</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Calendar</h3>
+          <p>Used to show upcoming events (read‑only). You can change access anytime: open Cockpit → Settings → System Settings.</p>
+        </div>
+        <div class="card">
+          <h3>Location &amp; WeatherKit</h3>
+          <p>Used to show local weather. You can change access anytime in System Settings.</p>
+        </div>
+        <div class="card">
+          <h3>Health</h3>
+          <p>Read‑only access to Activity rings and steps to populate the Activity panel. No health data leaves your device.</p>
+        </div>
+        <div class="card">
+          <h3>HomeKit</h3>
+          <p>Required to run scenes and toggle accessories you already set up in the Home app.</p>
+        </div>
+        <div class="card">
+          <h3>Apple Music</h3>
+          <p>Used to display what’s currently playing in the Now Playing panel.</p>
+        </div>
+      </div>
+    </section>
 
-<h2>6. Third-Party Services</h2>
-<p>The App uses the following Apple-provided frameworks that may involve data transmission to Apple's servers under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>:</p>
-<ul>
-    <li>Apple WeatherKit (location-based weather)</li>
-    <li>Apple MusicKit (now-playing metadata)</li>
-    <li>Apple HealthKit (read-only activity data)</li>
-    <li>Apple HomeKit (home device control)</li>
-    <li>Apple EventKit (calendar events)</li>
-</ul>
-<p>We do not integrate any third-party analytics, advertising, or crash-reporting SDKs.</p>
+    <section id="troubleshooting">
+      <h2>Troubleshooting</h2>
+      <details>
+        <summary>Calendar shows no events</summary>
+        <ul>
+          <li>Open Cockpit → Settings → System Settings and allow Calendar access.</li>
+          <li>Make sure the calendars you expect are enabled on this device.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Weather is missing or not updating</summary>
+        <ul>
+          <li>Allow Location access in System Settings.</li>
+          <li>Check your Weather refresh interval in Cockpit Settings.</li>
+          <li>Verify your network connection.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Activity is unavailable or denied</summary>
+        <ul>
+          <li>Enable Health access in System Settings (read‑only).</li>
+          <li>Ensure your iPhone/Apple Watch is syncing Activity to Health with iCloud.</li>
+          <li>Activity refreshes every ~5 minutes.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Home shows no scenes or accessories</summary>
+        <ul>
+          <li>Set up Home on your iPhone first, then open Cockpit.</li>
+          <li>Allow Home access in System Settings.</li>
+          <li>Only scenes created in the Home app appear here. Up to six accessories are listed for quick toggles.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Shortcuts don’t run</summary>
+        <ul>
+          <li>Install Apple’s Shortcuts app on this device.</li>
+          <li>Use the exact Shortcut name when adding a button.</li>
+          <li>Some Shortcut actions aren’t available on visionOS; Shortcuts will show a warning.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Now Playing doesn’t appear</summary>
+        <ul>
+          <li>The panel appears only while Apple Music is playing on this device.</li>
+          <li>Make sure the Music app is installed and you’re playing locally.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Network shows “—” or no IP</summary>
+        <ul>
+          <li>If offline, IP and latency may be unavailable.</li>
+          <li>Latency is measured with a lightweight request to one.one.one.one.</li>
+          <li>VPNs or special network setups can affect IP/throughput readings.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Battery shows “—” or values differ from system</summary>
+        <ul>
+          <li>Sandboxed apps have access only to coarse battery/thermal signals. Cockpit displays what the system exposes to apps.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>The dock is too small/large</summary>
+        <ul>
+          <li>Resize from the bottom edge of the window. The dock scales proportionally to keep text readable.</li>
+        </ul>
+      </details>
+    </section>
 
-<h2>7. Children's Privacy</h2>
-<p>The App is not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe a child under 13 has provided us with personal information, please contact us so we can delete it.</p>
+    <section id="privacy">
+      <h2>Privacy</h2>
+      <div class="card">
+        <p>Cockpit is designed with privacy in mind. We don’t collect personal data or use tracking. Optional permissions are used only to display your information on your device. Learn more in our <a href="https://andrefinetticangussu.github.io/cockpit/legal/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+      </div>
+    </section>
 
-<h2>8. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. If we make material changes, we will update the "Last updated" date at the top of this policy.</p>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Need help? Email us at <a href="mailto:apps.supporthub@gmail.com">apps.supporthub@gmail.com</a>. Please include:</p>
+        <ul>
+          <li>App version (Cockpit → Settings → About)</li>
+          <li>visionOS version and device</li>
+          <li>Steps to reproduce the issue and screenshots if possible</li>
+        </ul>
+        <p>
+          <a class="btn" href="mailto:apps.supporthub@gmail.com?subject=Cockpit%20Support">Contact Support</a>
+        </p>
+      </div>
+      <p style="color:var(--muted); font-size:14px; margin-top:8px;">Last updated: August 6, 2026</p>
+    </section>
+  </main>
 
-<h2>9. Contact</h2>
-<p>If you have any questions or concerns about this Privacy Policy, please contact us at: <a href="mailto:apps.supporthub@gmail.com">apps.supporthub@gmail.com</a></p>
-
-<footer>
-    &copy; 2026 Cockpit. All rights reserved.
-    &nbsp;·&nbsp; <a href="terms.html">Terms &amp; Conditions</a>
-</footer>
-
+  <footer>
+    <div class="foot-inner">
+      <div>© 2026 Cockpit</div>
+      <div>
+        <a href="https://andrefinetticangussu.github.io/cockpit/legal/privacy.html" target="_blank" rel="noopener">Privacy</a>
+        &nbsp;•&nbsp;
+        <a href="https://andrefinetticangussu.github.io/cockpit/legal/terms.html" target="_blank" rel="noopener">Terms</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
