@@ -71,6 +71,8 @@
     ul { padding-left: 18px; }
 
     .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--border); color: var(--muted); }
+    .badge.pro { color: var(--accent-2); border-color: rgba(77,163,255,0.35); }
+    .card h3 .badge { margin-left: 8px; vertical-align: middle; }
     .btn {
       display: inline-block; background: linear-gradient(180deg, var(--accent), var(--accent-2));
       color: #081018; font-weight: 600; padding: 10px 14px; border-radius: 10px; box-shadow: 0 8px 18px rgba(77,163,255,0.25);
@@ -102,6 +104,7 @@
       <a href="#getting-started">Getting Started</a>
       <a href="#panels">Panels</a>
       <a href="#customization">Customization</a>
+      <a href="#pro">Cockpit Pro</a>
       <a href="#permissions">Permissions</a>
       <a href="#troubleshooting">Troubleshooting</a>
       <a href="#privacy">Privacy</a>
@@ -120,7 +123,7 @@
       <p>
         Also see: <a href="https://andrefinetticangussu.github.io/cockpit/legal/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> •
         <a href="https://andrefinetticangussu.github.io/cockpit/legal/terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> •
-        <a href="https://apps.apple.com/app/id6798315258" target="_blank" rel="noopener">View on the App Store</a> •
+        <a href="https://apps.apple.com/app/id6798315258" target="_blank" rel="noopener">View on the App Store</a> •
         <a href="https://apps.apple.com/app/id6798315258?action=write-review" target="_blank" rel="noopener">Rate Cockpit</a>
       </p>
     </section>
@@ -142,6 +145,7 @@
             <li>Tap the edit button below the dock.</li>
             <li>Tap <strong>＋ Add</strong> to insert panels you haven’t placed yet.</li>
             <li>Drag panels to reorder; tap the small × to remove one.</li>
+            <li>Tap the Layout button to switch between a row, two rows, a column, or two columns.</li>
           </ul>
         </div>
       </div>
@@ -150,6 +154,7 @@
           <h3>Appearance &amp; theme</h3>
           <ul>
             <li>Tap the palette button in edit mode to choose a theme.</li>
+            <li>19 themes are available; Midnight, Cockpit, and Minimal are free, the rest are part of Cockpit Pro.</li>
             <li>The Cockpit instrument theme offers a precise, flight‑deck look.</li>
           </ul>
         </div>
@@ -160,6 +165,8 @@
             <li>First day of the week</li>
             <li>Temperature and wind units</li>
             <li>Weather refresh interval</li>
+            <li>Panel text size: Standard or Large, for panels with small type</li>
+            <li>Back up or restore your whole layout as a file, from Settings → Backup</li>
           </ul>
         </div>
       </div>
@@ -178,7 +185,7 @@
         </div>
         <div class="card">
           <h3>Calendar</h3>
-          <p>Your week and upcoming events at a glance (read‑only, with your permission).</p>
+          <p>Your week, upcoming events, and reminders that are due, at a glance (read‑only, with your permission).</p>
         </div>
         <div class="card">
           <h3>Focus Timer</h3>
@@ -189,24 +196,44 @@
           <p>Apple Music now playing appears only while audio is active on this device—so you always see what’s on.</p>
         </div>
         <div class="card">
-          <h3>Vision Pro Status</h3>
+          <h3>Apps</h3>
+          <p>One‑tap buttons that open your other apps, each with an SF Symbol icon of your choosing.</p>
+        </div>
+        <div class="card">
+          <h3>Countdown</h3>
+          <p>Days left until a date that matters to you, with a symbol you pick for it.</p>
+        </div>
+        <div class="card">
+          <h3>Daily Goal</h3>
+          <p>One number to reach today—steps, glasses of water, pages—counted with a tap.</p>
+        </div>
+        <div class="card">
+          <h3>Vision Pro Status <span class="badge pro">Cockpit Pro</span></h3>
           <p>CPU, memory, storage, battery level/state, thermal state (Normal/Fair/Serious/Critical), Low Power, and uptime—organized as rings and concise rows.</p>
         </div>
         <div class="card">
-          <h3>Shortcuts</h3>
+          <h3>Shortcuts <span class="badge pro">Cockpit Pro</span></h3>
           <p>One‑tap buttons that run your Shortcuts by exact name. You can add an SF Symbol icon. Running a Shortcut may briefly open the Shortcuts app; some actions aren’t available on visionOS.</p>
         </div>
         <div class="card">
-          <h3>Home</h3>
-          <p>Launch HomeKit scenes and toggle accessories directly from the dock. Create/edit scenes in Apple’s Home app. Up to six accessories are listed for quick toggles.</p>
+          <h3>Home <span class="badge pro">Cockpit Pro</span></h3>
+          <p>Launch HomeKit scenes and toggle accessories directly from the dock. Create/edit scenes in Apple’s Home app. Up to three accessories are listed for quick toggles.</p>
         </div>
         <div class="card">
-          <h3>Network</h3>
+          <h3>Network <span class="badge pro">Cockpit Pro</span></h3>
           <p>Connection type (Wi‑Fi/Ethernet/Cellular/Offline), local IPv4, ping latency (measured to one.one.one.one), and real‑time download/upload throughput sampled every second.</p>
         </div>
         <div class="card">
-          <h3>Activity</h3>
+          <h3>Activity <span class="badge pro">Cockpit Pro</span></h3>
           <p>Apple Watch‑style Move, Exercise, and Stand rings plus your daily step count (read‑only via HealthKit). Updates every 5 minutes.</p>
+        </div>
+        <div class="card">
+          <h3>Habits <span class="badge pro">Cockpit Pro</span></h3>
+          <p>A few daily habits and your current streak, checked off with a tap.</p>
+        </div>
+        <div class="card">
+          <h3>World Clock <span class="badge pro">Cockpit Pro</span></h3>
+          <p>Local time in the cities that matter to you.</p>
         </div>
       </div>
     </section>
@@ -215,20 +242,39 @@
       <h2>Customization</h2>
       <div class="card">
         <ul>
-          <li><strong>Layout:</strong> Add/remove panels and drag to reorder in edit mode.</li>
-          <li><strong>Theme:</strong> Midnight, Graphite, Sunset, Ocean, and the Cockpit instrument theme.</li>
+          <li><strong>Panels:</strong> Add/remove and drag to reorder in edit mode.</li>
+          <li><strong>Layout:</strong> Tap the Layout button to choose Row, Two Rows, Column, or Two Columns. The two‑lane grids need a few panels to be worth splitting into.</li>
+          <li><strong>Theme:</strong> 19 themes in three families — soft, translucent <strong>Glass</strong> (Midnight, Graphite, Sunset, Ocean, Holo, Crystal); dense technical <strong>Instrument</strong> readouts (Cockpit, Apollo, F1, Tron, Outrun, Steampunk, Telemetry, Mecha, Visor); and paper‑bright, editorial <strong>Light</strong> themes (Minimal, Bauhaus, Zen, Vellum). Midnight, Cockpit, and Minimal are free; the rest are Cockpit Pro.</li>
+          <li><strong>Text size:</strong> Settings → Appearance → Panel Text Size (Standard/Large) enlarges the small labels inside panels without changing the large readouts.</li>
           <li><strong>Resize &amp; scale:</strong> Drag the window edge; the dock keeps its aspect ratio so content stays legible.</li>
+          <li><strong>Backup:</strong> Settings → Backup saves your whole layout, theme, and panel data to one file, and can restore it later.</li>
           <li><strong>Persistence:</strong> Cockpit remembers your layout and reappears across sessions.</li>
         </ul>
       </div>
+    </section>
+
+    <section id="pro" class="card">
+      <h2>Cockpit Pro</h2>
+      <p>Cockpit is free to use, with a core set of panels and three starting themes. Cockpit Pro unlocks everything else, however you choose to pay for it: Monthly, Yearly (with a free trial for new subscribers), or a one‑time Lifetime purchase.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Free</h3>
+          <p>Clock, Weather, Calendar, Focus Timer, Apps, Countdown, Daily Goal, and Now Playing. Midnight, Cockpit, and Minimal themes.</p>
+        </div>
+        <div class="card">
+          <h3>Cockpit Pro</h3>
+          <p>Vision Pro Status, Shortcuts, Home, Network, Activity, Habits, and World Clock. Every remaining theme.</p>
+        </div>
+      </div>
+      <p>To upgrade, tap the Cockpit Pro row at the top of Settings. Already purchased on another device with the same Apple Account? Tap <strong>Restore Purchases</strong> in the same section. A Monthly or Yearly subscription can be managed or cancelled from Settings → [your name] → Subscriptions on your paired iPhone.</p>
     </section>
 
     <section id="permissions">
       <h2>Permissions</h2>
       <div class="grid cols-2">
         <div class="card">
-          <h3>Calendar</h3>
-          <p>Used to show upcoming events (read‑only). You can change access anytime: open Cockpit → Settings → System Settings.</p>
+          <h3>Calendar &amp; Reminders</h3>
+          <p>Used to show upcoming events and reminders that are due (read‑only). You can change access anytime: open Cockpit → Settings → System Settings.</p>
         </div>
         <div class="card">
           <h3>Location &amp; WeatherKit</h3>
@@ -247,14 +293,15 @@
           <p>Used to display what’s currently playing in the Now Playing panel.</p>
         </div>
       </div>
+      <p style="margin-top:14px;">You can review every permission Cockpit uses, and jump straight to System Settings to change one, from Cockpit → Settings → Review Permissions.</p>
     </section>
 
     <section id="troubleshooting">
       <h2>Troubleshooting</h2>
       <details>
-        <summary>Calendar shows no events</summary>
+        <summary>Calendar shows no events or reminders</summary>
         <ul>
-          <li>Open Cockpit → Settings → System Settings and allow Calendar access.</li>
+          <li>Open Cockpit → Settings → System Settings and allow Calendar access (this also covers reminders that are due).</li>
           <li>Make sure the calendars you expect are enabled on this device.</li>
         </ul>
       </details>
@@ -279,7 +326,7 @@
         <ul>
           <li>Set up Home on your iPhone first, then open Cockpit.</li>
           <li>Allow Home access in System Settings.</li>
-          <li>Only scenes created in the Home app appear here. Up to six accessories are listed for quick toggles.</li>
+          <li>Only scenes created in the Home app appear here. Up to three accessories are listed for quick toggles.</li>
         </ul>
       </details>
       <details>
@@ -312,6 +359,22 @@
         </ul>
       </details>
       <details>
+        <summary>Panel text is too small to read</summary>
+        <ul>
+          <li>Open Cockpit → Settings → Appearance and set Panel Text Size to Large.</li>
+          <li>This enlarges the small labels inside every panel; large readouts like the clock, the timer, and the temperature stay the same size on purpose.</li>
+          <li>To make the whole bar bigger instead, drag its corner.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>I purchased Cockpit Pro but panels are still locked</summary>
+        <ul>
+          <li>Open Cockpit → Settings → Cockpit Pro → Restore Purchases.</li>
+          <li>Make sure you’re signed in with the same Apple Account used for the purchase.</li>
+          <li>For a Monthly or Yearly plan, confirm the subscription is still active in Settings → [your name] → Subscriptions on your paired iPhone.</li>
+        </ul>
+      </details>
+      <details>
         <summary>The dock is too small/large</summary>
         <ul>
           <li>Resize from the bottom edge of the window. The dock scales proportionally to keep text readable.</li>
@@ -339,7 +402,7 @@
           <a class="btn" href="mailto:apps.supporthub@gmail.com?subject=Cockpit%20Support">Contact Support</a>
         </p>
       </div>
-      <p style="color:var(--muted); font-size:14px; margin-top:8px;">Last updated: August 6, 2026</p>
+      <p style="color:var(--muted); font-size:14px; margin-top:8px;">Last updated: August 26, 2026</p>
     </section>
   </main>
 
